@@ -52,7 +52,7 @@ var path = {
         request(MATRIX_URL, (error, response, body) => {
             if (error) throw new Error(error);
             if (body) {
-                matrix = body.trim().split("\n").map((row) => {
+                var matrix = body.trim().split("\n").map((row) => {
                     return row.split(",").map((col) => parseInt(col))
                 });
                 path.minPathSum.call(null, matrix);
